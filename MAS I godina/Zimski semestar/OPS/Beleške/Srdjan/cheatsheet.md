@@ -1,5 +1,6 @@
 Sadrzaj:
-* [Legenda](#legenda)
+* [Formule](#formule)
+* [Termini](#termini)
 * [Testovi](#testovi)
   * [Zakljucivanje](#zakljucivanje)
   * [t-testovi](#t-testovi)
@@ -8,12 +9,15 @@ Sadrzaj:
     * [Upareni t-test](#upareni-t-test)
     * [Man-Vitnijev test](#man-vitnijev-test)
     * [Vilkoksonov test](#vilkoksonov-test)
+  * [Vise od 2 grupe](#vise-od-2-grupe)
+    * [ANOVA](#anova)
+    * [Kruskal-Volisov test](#kruskal-volisov-test)
   * [Pomocni testovi](#pomocni-testovi)
     * [Levinov test](#levinov-test)
 
 ---    
 
-# Legenda
+# Formule
 
 | Oznaka          | Opis                                        | Formula                                                               |
 |:---------------:|:-------------------------------------------:|:---------------------------------------------------------------------:|
@@ -24,6 +28,13 @@ Sadrzaj:
 | $\bar{S_{n}}$   | uzoracka standardna devijacija (odstupanje) | $\sqrt {\bar{S_{n}^2}}$                                               |
 | $\bar{S_{n}^2}$ | disperzija uzorka                           | $\displaystyle\frac {1} {n} \sum_{i=1}^n {(X_{i} - \bar{X_{n}})^2}$   |
 | $\hat{S_{n}^2}$ | korigovana disperzija uzorka                | $\displaystyle\frac {1} {n-1} \sum_{i=1}^n {(X_{i} - \bar{X_{n}})^2}$ |
+
+# Termini
+
+
+| Termin | Opis |
+|:---------------:|:----------------:|
+| Stepen slobode | koristimo kao parametar pri citanju vrednosti granice kriticnog regionana osnovu vrednosti test statistike |
 
 # Testovi
 
@@ -73,13 +84,15 @@ Zakljucivanje (rucno testiranje):
 
 ---
 
-Uslovi:
+#### Uslovi
 * 1 neprekidno obelezje jednog uzorka
 * posmatrano obelezje ima normalnu raspodelu
 
 ---
 
-Nulta hipoteza - sredine je (jednaka vrednosti) $m_{0}$:
+#### Nulta hipoteza
+
+Sredine je (jednaka vrednosti) $m_{0}$:
 
 $$
 H_{0}(m=m_{0})
@@ -87,13 +100,15 @@ $$
 
 ---
 
-Test statistika:
+#### Test statistika
 
 $$
 t_{n-1} = \frac {\bar{x_{n}} - m_{0}} {\displaystyle\frac {\hat{S_{n}}} {\sqrt{n}}}
 $$
 
-Ima Studentovu $t$ raspodelu sa $n-1$ stepenom slobode.
+Ima [Studentovu $t$ raspodelu](slike/studentova-raspodela.png) sa $n-1$ stepenom slobode.
+
+---
 
 |  Kriticna oblast                                                   | Alternativna hipoteza |
 |:------------------------------------------------------------------:|:---------------------:|
@@ -108,14 +123,16 @@ Ima Studentovu $t$ raspodelu sa $n-1$ stepenom slobode.
 
 ---
 
-Uslovi:
+#### Uslovi
 * **po** 1 neprekidno obelezje iz 2 uzorka/populacije/grupe
 * posmatrano obelezje **ima** normalnu raspodelu
 * **(opciono, ali pozeljno)** homogenost varijanse
 
 ---
 
-Nulta hipoteza - sredine u obe grupe su jednake:
+#### Nulta hipoteza 
+
+Sredine u obe grupe su jednake:
 
 $$
 \begin{gather*}
@@ -129,7 +146,7 @@ gde je $m_{1}$ sredina jednog uzorka, a $m_{2}$ sredina drugog, a $m = m_{1} - m
 
 ---
 
-Test statistika:
+#### Test statistika
 
 $$
 t = 
@@ -142,7 +159,9 @@ t =
     }
 $$
 
-Ima Studentovu $t$ raspodelu sa $n_{1} + n_{2} - 2$ stepenom slobode.
+Ima [Studentovu $t$ raspodelu](slike/studentova-raspodela.png) sa $n_{1} + n_{2} - 2$ stepenom slobode.
+
+---
 
 |  Kriticna oblast                                                   | Alternativna hipoteza |
 |:------------------------------------------------------------------:|:---------------------:|
@@ -158,12 +177,16 @@ Ima Studentovu $t$ raspodelu sa $n_{1} + n_{2} - 2$ stepenom slobode.
 
 ---
 
-Uslovi:
+#### Uslovi
 * 2 merenja nad **istom** populacijom
 * 1 neprekidno obelezje u oba merenju
 * obelezje ima **normalnu raspodelu** u **oba** merenja
 
-Nulta hipoteza - sredina u prvom merenju je jednaka sredinu u drugom (sredine u merenjima 
+---
+
+#### Nulta hipoteza
+
+Sredina u prvom merenju je jednaka sredinu u drugom (sredine u merenjima 
 su jednake):
 
 $$
@@ -176,13 +199,17 @@ $$
 
 $D = m_{1} - m_{2}$ uvedena nova oznaka radi izbegavanja preklapanja oznaka
 
-Test statistika:
+---
+
+#### Test statistika
 
 $$
 t_{n-1} = \frac {\bar{D_{n}}} {\displaystyle\frac {\hat{S_{n}}} {\sqrt{n}}} 
 $$
 
-Ima Studentovu $t$ raspodelu sa $n - 1$ stepenom slobode.
+Ima [Studentovu $t$ raspodelu](slike/studentova-raspodela.png) sa $n - 1$ stepenom slobode.
+
+---
 
 |  Kriticna oblast                                                   | Alternativna hipoteza |
 |:------------------------------------------------------------------:|:---------------------:|
@@ -197,11 +224,13 @@ Ima Studentovu $t$ raspodelu sa $n - 1$ stepenom slobode.
 
 ---
 
-Uslovi:
+#### Uslovi
 * **po** 1 neprekidno obelezje iz 2 uzorka/populacije/grupe
+---
 
+#### Nulta hipoteza 
 
-Nulta hipoteza - nema razlike izmedju medijana:
+Nema razlike izmedju medijana:
 
 $$
 \begin{gather*}
@@ -213,7 +242,9 @@ $$
 
 gde je $M_{1}$ medijana jednog uzorka, a $M_{2}$ medijana drugog, a $M = M_{1} - M_{2}$.
 
-Test statistika:
+---
+
+#### Test statistika
 
 $$
 T_{n_{1}} = \displaystyle\sum_{k=1}^{n_1} r_{x_{k}}
@@ -222,33 +253,113 @@ $$
 gde je $(x_{1}, x_{2}, \dots,  x_{n_{1}})$ uzorak koji ima **manji obim**, 
 $n_{1}$ njegov obim, a $r_{k}$ rang `k`. clana tog uzorka.
 
+---
+
 |  Kriticna oblast                                                 | Alternativna hipoteza |
 |:----------------------------------------------------------------:|:---------------------:|
 | $C = (0, T_{n_{1}, n_{2}}^a) \cup (T_{n_{1}, n_{2}}^b, +\infty)$ | $H_{1}(M \ne 0)$      |
+
+---
+
+#### Test
+
+Tabela:
+
+![Man-Vitnijeva U tabela](slike/man-vitnijeva-tabela.png)
 
 ### Vilkoksonov test
 
 * neparametarska alternativa za [Upareni t-test](#upareni-t-test)
 * testira da li postoji razlika izmedju 2 merenja (jednake medijane) za dato obelezje
-
+* https://www.statology.org/wilcoxon-signed-rank-test
+  * **Napomena**: za igrace 1, 8, 10, 11 i 15 je `3` zato sto 
+  je to vrednost proseka njihovih pozicija u varijacionom nizu, tj.
+  `suma = 3+4+5+6+7 = 15`, `n = 5`, pa je `rank = suma/n = 15/5 = 3`
 ---
 
-Uslovi:
-* **po** 1 neprekidno obelezje iz 2 uzorka/populacije/grupe
+#### Uslovi
+* 2 merenja nad **istom** populacijom
+* **po** 1 neprekidno obelezje iz 2 merenja
 
-Nulta hipoteza - medijane su po merenjima jednake:
+#### Nulta hipoteza 
+
+Medijane su po merenjima jednake:
 
 $$
 H_{0}(M=0)
 $$
 
+---
 
-Test statistika:
+#### Test statistika
 
 $$
-\min\left(\sum{\text{pozitivni rangovi}}, \;  \left| \sum{\text{negativni rangovi}} \right| \right)
+T_{n,\alpha}=\min\left(\sum{\text{pozitivni rangovi}} ,  \left| \sum{\text{negativni rangovi}} \right| \right)
 $$
 
+---
+
+|  Kriticna oblast                                                 | Alternativna hipoteza |
+|:----------------------------------------------------------------:|:---------------------:|
+| $C = (-\infty, T_{n, \alpha}]$ | $H_{1}(M \ne 0)$ |
+
+#### Test
+
+1. rangiranje apsolutnih vrednosti razlika
+2. rangu se dodeljuje znak razlike
+3. sabiranje posebno pozitivnih i negativnih rangova (2 sume)
+4. test statistika: $\min\left(\sum{\text{pozitivni rangovi}} \;  \left| \sum{\text{negativni rangovi}} \right| \right)$
+5. granice za kriticni region se citaju iz tablice koja je predvidjena za ovaj test
+6. prihvatanje neke hipoteze
+
+
+Ako imamo iste vrednosti, njihov rang predstavlja prosek njihovih
+pozicija u var. nizu.
+
+Ako nema promena (razlika 0), onda se dati element ne posmatra
+dalje u algoritmu i ne racuna u ukupan broj elemenata (`n` ce se smanjiti
+onoliko koliko ima ovakvih elemenata).
+
+## Vise od 2 grupe
+
+### ANOVA
+
+### Kruskal-Volisov test
+
+* neparametarska alternativa za [ANOVA-u](#ANOVA)
+* testira da li postoji razlika po datum obelezju
+  u tri ili vise grupe
+
+---
+
+#### Uslovi
+* **po** 1 neprekidno obelezje iz 3 grupe ili vise grupe
+
+---
+
+#### Nulta hipoteza
+
+Medijane po brupama jednake:
+
+$$
+H_{0}(M_1 = M_2 = M_3 = \dots = M_n)
+$$
+
+---
+
+#### Test statistika
+
+$$
+H = \frac{12}{n(n+1)} \displaystyle\sum_{i=1}^{k} \frac{R_{i}^2}{n_{i}} - 3 (n+1)
+$$
+
+Ima [$\chi^2$ (hi kvadrat) raspodelu](slike/hi-kvadrat.png).
+
+---
+
+|  Kriticna oblast                                                   | Alternativna hipoteza |
+|:------------------------------------------------------------------:|:---------------------:|
+| $C = (- \infty, -t_{n-1, \alpha}) \cup (t_{n-1, \alpha}, +\infty)$ | $H_{1}(m \ne 0)$      |
 
 ## Pomocni testovi
 
@@ -257,7 +368,9 @@ $$
 * ispituje homogenost varijansi
 * koristi se pri izboru nezavisnog t-testa
 
-Nulta hipoteza - varijanse su jednake u obe populacije:
+#### Nulta hipoteza
+
+Varijanse su jednake u obe populacije:
 
 $$
 H_{0}(\sigma_{1}^2 = \sigma_{2}^2)

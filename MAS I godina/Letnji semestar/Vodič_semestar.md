@@ -3,6 +3,8 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 
 # Lista predmeta
 
+[Heurističke metode optimizacije][hmo] 
+
 [Računarstvo u oblaku][ruo]  
 
 # Korisni linkovi
@@ -21,7 +23,10 @@ U ovom fajlu se nalaze informacije o letnjem semestru i predmetima
 
 [//]: # ( Lista predmeta reference )
 
+[hmo]: ./HMO/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
 [ruo]: ./RUO/Vodi%C4%8D_predmet.md#vodi%C4%8D
+
 
 
 [//]: # ( Meeting reference )
